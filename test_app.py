@@ -6,13 +6,13 @@ import pytest
 from app import app
 
 @pytest.fixture
-def test_client():
+def flask_test_client():
     """Crea un cliente de prueba para la aplicación Flask."""
     with app.test_client() as client:
         yield client
 
-def test_home(test_client):
+def test_home(flask_test_client):
     """Prueba que la ruta principal devuelve el mensaje esperado."""
-    response = test_client.get("/")
+    response = flask_test_client.get("/")
     assert response.status_code == 200  # Verifica que el código de estado sea 200
     assert response.data == b"Hello, CI/CD with Docker!"  # Verifica el contenido

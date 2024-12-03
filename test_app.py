@@ -1,14 +1,18 @@
+"""
+Este módulo contiene pruebas unitarias para la aplicación Flask en app.py.
+"""
+
 import pytest
 from app import app
 
 @pytest.fixture
-def client():
-    """A test client for the app."""
+def test_client():
+    """Crea un cliente de prueba para la aplicación Flask."""
     with app.test_client() as client:
         yield client
 
-def test_home(client):
-    """Test the home route."""
-    response = client.get("/")
-    assert response.status_code == 200  # Check if the status code is 200
-    assert response.data == b"Hello, CI/CD with Docker!"  # Check if the content matches
+def test_home(test_client):
+    """Prueba que la ruta principal devuelve el mensaje esperado."""
+    response = test_client.get("/")
+    assert response.status_code == 200  # Verifica que el código de estado sea 200
+    assert response.data == b"Hello, CI/CD with Docker!"  # Verifica el contenido

@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pylint flask autopep8
+          pip install pylint pytest flask autopep8
 
       - name: Make autopep8
         run:  autopep8 --in-place --aggressive --aggressive app.py test_app.py

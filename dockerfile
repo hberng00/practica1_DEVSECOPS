@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copy application files
 COPY app.py /app/
+COPY test_app.py /app/
 
 # Install dependencies
 RUN pip install flask

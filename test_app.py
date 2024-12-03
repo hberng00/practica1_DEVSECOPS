@@ -5,8 +5,8 @@ Este módulo contiene pruebas unitarias para la aplicación Flask en app.py.
 import pytest
 from app import app
 
-@pytest.fixture
-def app_test_client():
+@pytest.fixture(name="test_client")
+def test_client():
     """Crea un cliente de prueba para la aplicación Flask."""
     with app.test_client() as client:
         yield client

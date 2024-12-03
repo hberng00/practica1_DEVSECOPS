@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    statetegy:
+    strategy:
     matrix:
       python-version: [3.9]
 

@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  build:
+  pylint_build:
     runs-on: ubuntu-latest
     strategy:
       matrix:

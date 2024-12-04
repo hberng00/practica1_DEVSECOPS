@@ -36,3 +36,6 @@ jobs:
 
       - name: Test the app
         run: curl -f http://localhost:5000
+
+      - name: Erase Docker
+        run: docker rm -f flask-app-container

@@ -11,6 +11,7 @@ jobs:
 
     permissions:
       contents: write
+      pages: write
     
     steps:
       - name: Checkout code
@@ -19,7 +20,7 @@ jobs:
       - name: Generate Doxygen
         uses: mattnotmitt/doxygen-action@edge
         with:
-          doxyfile-path: ".github/doxyfile"
+          doxyfile-path: ".github/Doxyfile"
 
       - name: Deploy Doxygen page
         uses: peaceiris/actions-gh-pages@v4

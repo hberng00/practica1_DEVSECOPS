@@ -1,3 +1,8 @@
+""" 
+Módulo de pruebas para la aplicación Flask. 
+Contiene tests para verificar el funcionamiento de las rutas y manejo de errores.
+"""
+
 import pytest
 from app import app  # Asumiendo que tu código está en un archivo llamado app.py
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flask_5ftest_5fclient_0',['flask_test_client',['../namespacetest__app.html#a9bcec358c7ce7e2540bed926c0c3ab77',1,'test_app']]]
+  ['greet_0',['greet',['../namespaceapp.html#a0155ec5b0e3998059789f72d412b14c9',1,'app']]]
 ];

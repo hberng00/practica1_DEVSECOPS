@@ -95,6 +95,16 @@ $(function(){ initResizable(false); });
 Functions</h2></td></tr>
 <tr class="memitem:ad9c2cdedb81925392375e58250fc2ffb" id="r_ad9c2cdedb81925392375e58250fc2ffb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9c2cdedb81925392375e58250fc2ffb">home</a> ()</td></tr>
 <tr class="separator:ad9c2cdedb81925392375e58250fc2ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5714ac2abd8ac662609b2f8809ef148" id="r_aa5714ac2abd8ac662609b2f8809ef148"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5714ac2abd8ac662609b2f8809ef148">about</a> ()</td></tr>
+<tr class="separator:aa5714ac2abd8ac662609b2f8809ef148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0155ec5b0e3998059789f72d412b14c9" id="r_a0155ec5b0e3998059789f72d412b14c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0155ec5b0e3998059789f72d412b14c9">greet</a> (name)</td></tr>
+<tr class="separator:a0155ec5b0e3998059789f72d412b14c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa87351fead78f4ce340e72c5a5bcfc0" id="r_aaa87351fead78f4ce340e72c5a5bcfc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa87351fead78f4ce340e72c5a5bcfc0">add</a> ()</td></tr>
+<tr class="separator:aaa87351fead78f4ce340e72c5a5bcfc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad6bb0a0739493d3d9559ba061a9bd74" id="r_aad6bb0a0739493d3d9559ba061a9bd74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad6bb0a0739493d3d9559ba061a9bd74">page_not_found</a> (e)</td></tr>
+<tr class="separator:aad6bb0a0739493d3d9559ba061a9bd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0cbd2a0de4e8a30c54b53e6a2cb313" id="r_adf0cbd2a0de4e8a30c54b53e6a2cb313"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf0cbd2a0de4e8a30c54b53e6a2cb313">internal_server_error</a> (e)</td></tr>
+<tr class="separator:adf0cbd2a0de4e8a30c54b53e6a2cb313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -109,8 +119,61 @@ Variables</h2></td></tr>
 <tr class="separator:ae996542be63ac459a38531f7c2dd0a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Este módulo define una aplicación Flask básica para demostrar CI/CD con Docker.
+<div class="textblock"><pre class="fragment">Este modulo define una aplicacion Flask mas compleja para demostrar CI/CD con Docker.
 </pre> </div><h2 class="groupheader">Function Documentation</h2>
+<a id="aa5714ac2abd8ac662609b2f8809ef148" name="aa5714ac2abd8ac662609b2f8809ef148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5714ac2abd8ac662609b2f8809ef148">&#9670;&#160;</a></span>about()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.about </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Devuelve informacion sobre la aplicacion.</pre> 
+</div>
+</div>
+<a id="aaa87351fead78f4ce340e72c5a5bcfc0" name="aaa87351fead78f4ce340e72c5a5bcfc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa87351fead78f4ce340e72c5a5bcfc0">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.add </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Suma dos numeros enviados en la solicitud POST.
+Espera un JSON en el formato {"a": valor1, "b": valor2}.
+</pre> 
+</div>
+</div>
+<a id="a0155ec5b0e3998059789f72d412b14c9" name="a0155ec5b0e3998059789f72d412b14c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0155ec5b0e3998059789f72d412b14c9">&#9670;&#160;</a></span>greet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.greet </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Devuelve un saludo personalizado.</pre> 
+</div>
+</div>
 <a id="ad9c2cdedb81925392375e58250fc2ffb" name="ad9c2cdedb81925392375e58250fc2ffb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad9c2cdedb81925392375e58250fc2ffb">&#9670;&#160;</a></span>home()</h2>
 
@@ -126,6 +189,40 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Devuelve un mensaje de saludo para la ruta principal.</pre> 
+</div>
+</div>
+<a id="adf0cbd2a0de4e8a30c54b53e6a2cb313" name="adf0cbd2a0de4e8a30c54b53e6a2cb313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf0cbd2a0de4e8a30c54b53e6a2cb313">&#9670;&#160;</a></span>internal_server_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.internal_server_error </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Maneja errores 500 y devuelve un mensaje personalizado.</pre> 
+</div>
+</div>
+<a id="aad6bb0a0739493d3d9559ba061a9bd74" name="aad6bb0a0739493d3d9559ba061a9bd74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad6bb0a0739493d3d9559ba061a9bd74">&#9670;&#160;</a></span>page_not_found()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">app.page_not_found </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>e</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Maneja errores 404 y devuelve un mensaje personalizado.</pre> 
 </div>
 </div>
 </div><!-- contents -->

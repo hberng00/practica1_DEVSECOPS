@@ -1,3 +1,8 @@
+"""
+Este módulo contiene pruebas para la aplicación Flask utilizando pytest.
+Las pruebas verifican las rutas y el manejo de errores.
+"""
+
 import json
 import pytest
 from app import app

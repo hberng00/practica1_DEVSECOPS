@@ -1,46 +1,46 @@
 import pytest
-from flask import Flask
 from app import app  # Asumiendo que tu código está en un archivo llamado app.py
 
-# Usamos el fixture de pytest para el cliente de pruebas de Flask
 @pytest.fixture
-def client():
-    # Creamos un cliente de prueba para nuestra aplicación Flask
+def test_client():
+    """
+    Fixture que crea un cliente de prueba para simular las peticiones HTTP a la aplicación Flask.
+    """
     with app.test_client() as client:
         yield client
 
-# Test para la ruta principal "/"
-def test_home(client):
-    response = client.get("/")
+def test_home(test_client):
+    """Test de la ruta principal /"""
+    response = test_client.get("/")
     assert response.status_code == 200
     assert response.data.decode() == "Hello, CI/CD with Docker!"
 
-# Test para la ruta "/about"
-def test_about(client):
-    response = client.get("/about")
+def test_about(test_client):
+    """Test de la ruta /about"""
+    response = test_client.get("/about")
     assert response.status_code == 200
     assert response.data.decode() == "Esta es una aplicacion Flask para demostrar CI/CD con Docker."
 
-# Test para la ruta "/greet/<name>"
-def test_greet(client):
+def test_greet(test_client):
+    """Test de la ruta /greet/<name>"""
     name = "Juan"
-    response = client.get(f"/greet/{name}")
+    response = test_client.get(f"/greet/{name}")
     assert response.status_code == 200
     assert response.data.decode() == f"Hello, {name}! Bienvenido a nuestra aplicacion."
 
-# Test para el manejo de error 404
-def test_page_not_found(client):
-    response = client.get("/pagina_inexistente")
+def test_page_not_found(test_client):
+    """Test para el manejo de error 404"""
+    response = test_client.get("/pagina_inexistente")
     assert response.status_code == 404
     assert response.json == {"error": "La pagina no fue encontrada"}
 
-# Test para el manejo de error 500
-def test_internal_server_error(client):
+def test_internal_server_error(test_client):
+    """Test para el manejo de error 500"""
     # Simulamos un error 500 provocando un fallo en el servidor
     @app.route("/error")
     def error_route():
-        raise Exception("Error forzado")
+        raise RuntimeError("Error forzado")  # Cambiar a un error más específico
     
-    response = client.get("/error")
+    response = test_client.get("/error")
     assert response.status_code == 500
     assert response.json == {"error": "Error interno del servidor"}

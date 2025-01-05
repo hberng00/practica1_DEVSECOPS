@@ -24,6 +24,14 @@ Este flujo de trabajo de CI/CD está configurado para ejecutarse automáticament
 7. Eliminación del contenedor Docker: Finalmente, se elimina el contenedor Docker para limpiar el entorno de ejecución.
 Este pipeline asegura que, cada vez que se sube un cambio en la rama main, la aplicación se construya, ejecute y pruebe automáticamente en un entorno Docker.
 
+Doxygen Deployment
+Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:
+
+1. Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.
+2. Generación de documentación con Doxygen: Utiliza la acción mattnotmitt/doxygen-action para generar la documentación de Doxygen a partir de un archivo de configuración Doxyfile ubicado en .github/Doxyfile.
+3. Despliegue en GitHub Pages: Despliega la documentación generada en la rama gh-pages utilizando la acción peaceiris/actions-gh-pages. La documentación se publica desde el directorio docs/html.
+Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main
+
 
 [![CI/CD Pipeline](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml)
 

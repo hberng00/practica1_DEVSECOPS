@@ -5,8 +5,8 @@ Las pruebas verifican las rutas y el manejo de errores.
 import pytest
 from app import app
 
-@pytest.fixture(name="test_client")
-def test_client():
+@pytest.fixture(name="first_test_client")
+def firts_test_client():
     """
     Fixture que proporciona un cliente de prueba para la aplicación Flask.
     Este cliente simula peticiones HTTP para realizar las pruebas.

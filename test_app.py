@@ -1,7 +1,3 @@
-"""
-Pruebas para la aplicacion Flask utilizando pytest.
-"""
-
 import json
 import pytest
 from app import app
@@ -33,7 +29,7 @@ def test_greet(client):
     name = "TestUser"
     response = client.get(f'/greet/{name}')
     assert response.status_code == 200
-    assert f'Hello, {name}!'.encode() in response.data
+    assert f'Hello, {name}! Bienvenido a nuestra aplicacion.'.encode() in response.data
 
 @pytest.mark.usefixtures("client")
 def test_add_valid(client):
@@ -50,6 +46,7 @@ def test_add_missing_data(client):
     assert response.status_code == 400
     data = json.loads(response.data)
     assert 'error' in data
+    assert data['error'] == "Debes proporcionar los numeros 'a' y 'b'"
 
 @pytest.mark.usefixtures("client")
 def test_add_invalid_data(client):
@@ -58,6 +55,7 @@ def test_add_invalid_data(client):
     assert response.status_code == 400
     data = json.loads(response.data)
     assert 'error' in data
+    assert data['error'] == "Los valores 'a' y 'b' deben ser numeros"
 
 @pytest.mark.usefixtures("client")
 def test_404_error(client):
@@ -73,7 +71,7 @@ def test_500_error(client):
     """Prueba la gestion de errores 500 forzando un fallo."""
     @app.route('/cause500')
     def cause500():
-        raise Exception("Forzar error 500")
+        raise ValueError("Forzar error 500")
 
     response = client.get('/cause500')
     assert response.status_code == 500

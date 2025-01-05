@@ -1,7 +1,3 @@
-"""
-Este modulo define una aplicacion Flask mas compleja para demostrar CI/CD con Docker.
-"""
-
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -34,6 +30,7 @@ def add():
     a = data['a']
     b = data['b']
     
+    # Validate that a and b are numbers
     try:
         result = float(a) + float(b)
     except ValueError:
@@ -42,12 +39,12 @@ def add():
     return jsonify({"result": result})
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found():
     """Maneja errores 404 y devuelve un mensaje personalizado."""
     return jsonify({"error": "La pagina no fue encontrada"}), 404
 
 @app.errorhandler(500)
-def internal_server_error(e):
+def internal_server_error():
     """Maneja errores 500 y devuelve un mensaje personalizado."""
     return jsonify({"error": "Error interno del servidor"}), 500
 

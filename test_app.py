@@ -6,38 +6,38 @@ import pytest
 from app import app
 
 @pytest.fixture
-def client():
+def flask_test_client():
     with app.test_client() as client:
         yield client
 
-def test_home(test_client):
-    response = test_client.get('/')
+def test_home(test_flask_test_client):
+    response = test_flask_test_client.get('/')
     assert b'Hello, CI/CD with Docker!' in response.data
 
-def test_about(test_client):
-    response = test_client.get('/about')
+def test_about(test_flask_test_client):
+    response = test_flask_test_client.get('/about')
     assert b'Esta es una aplicacion Flask para demostrar CI/CD con Docker.' in response.data
 
-def test_greet(test_client):
+def test_greet(test_flask_test_client):
     name = 'John'
-    response = test_client.get(f'/greet/{name}')
+    response = test_flask_test_client.get(f'/greet/{name}')
     assert f'Hello, {name}!'.encode() in response.data
 
-def test_add_valid(test_client):
-    response = test_client.post('/add', json={'a': 10, 'b': 20})
+def test_add_valid(test_flask_test_client):
+    response = test_flask_test_client.post('/add', json={'a': 10, 'b': 20})
     data = response.get_json()
     assert data['result'] == 30
 
-def test_add_missing_data(test_client):
-    response = test_client.post('/add', json={'a': 10})
+def test_add_missing_data(test_flask_test_client):
+    response = test_flask_test_client.post('/add', json={'a': 10})
     data = response.get_json()
     assert 'error' in data
 
-def test_add_invalid_data(test_client):
-    response = test_client.post('/add', json={'a': 'ten', 'b': 'twenty'})
+def test_add_invalid_data(test_flask_test_client):
+    response = test_flask_test_client.post('/add', json={'a': 'ten', 'b': 'twenty'})
     data = response.get_json()
     assert 'error' in data
 
-def test_404_error(test_client):
-    response = test_client.get('/nonexistent')
+def test_404_error(test_flask_test_client):
+    response = test_flask_test_client.get('/nonexistent')
     assert response.status_code == 404

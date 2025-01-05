@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['internal_5fserver_5ferror_0',['internal_server_error',['../namespaceapp.html#adf0cbd2a0de4e8a30c54b53e6a2cb313',1,'app']]]
+  ['home_0',['home',['../namespaceapp.html#ad9c2cdedb81925392375e58250fc2ffb',1,'app']]]
 ];

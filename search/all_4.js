@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['page_5fnot_5ffound_0',['page_not_found',['../namespaceapp.html#aad6bb0a0739493d3d9559ba061a9bd74',1,'app']]],
-  ['practica1devsecops_1',['practica1DEVSECOPS',['../md_README.html',1,'']]]
+  ['internal_5fserver_5ferror_0',['internal_server_error',['../namespaceapp.html#adf0cbd2a0de4e8a30c54b53e6a2cb313',1,'app']]]
 ];

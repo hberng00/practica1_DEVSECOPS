@@ -88,6 +88,25 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<p>CI/CD Pipeline Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuando se realiza un "push" en la rama main del repositorio. El pipeline realiza los siguientes pasos:</p><ol type="1">
+<li>Checkout del código: Obtiene el código más reciente del repositorio.</li>
+<li>Configuración de Docker: Configura Docker en el entorno de ejecución.</li>
+<li>Construcción de la imagen Docker: Construye la imagen Docker de la aplicación Flask utilizando el Dockerfile del proyecto.</li>
+<li>Ejecución del contenedor: Inicia un contenedor Docker y expone el puerto 5000 para acceder a la aplicación Flask.</li>
+<li>Espera a que el contenedor esté listo: El flujo de trabajo espera hasta 30 segundos para verificar que la aplicación esté respondiendo en el puerto 5000. Si la aplicación no está lista en ese tiempo, el pipeline falla.</li>
+<li>Prueba de la aplicación: Realiza una solicitud HTTP para verificar que la aplicación Flask esté funcionando correctamente.</li>
+<li>Limpieza: Finalmente, se elimina el contenedor Docker para limpiar el entorno. Este pipeline garantiza que la aplicación se construya, ejecute y pruebe automáticamente cada vez que se realice un cambio en la rama main.</li>
+</ol>
+<p>CI/CD Pipeline Este flujo de trabajo de CI/CD está configurado para ejecutarse automáticamente cada vez que se realiza un "push" en la rama main del repositorio. El pipeline se encarga de construir, ejecutar y probar la aplicación Flask dentro de un contenedor Docker. Los pasos del flujo de trabajo son los siguientes:</p>
+<ol type="1">
+<li>Checkout del código: Se obtiene el código más reciente del repositorio utilizando la acción actions/checkout.</li>
+<li>Configuración de Docker: Se configura Docker utilizando la acción docker/setup-buildx-action para preparar el entorno y permitir la construcción de imágenes.</li>
+<li>Construcción de la imagen Docker: Se construye una imagen Docker llamada flask-app a partir del Dockerfile del proyecto.</li>
+<li>Ejecución del contenedor Docker: Se inicia un contenedor en segundo plano con el nombre flask-app-container, exponiendo el puerto 5000 para que se pueda acceder a la aplicación Flask.</li>
+<li>Espera a que el contenedor esté listo: El flujo de trabajo espera hasta 30 segundos verificando si la aplicación Flask está disponible en el puerto 5000. Si el contenedor no está listo en ese tiempo, el flujo de trabajo falla.</li>
+<li>rueba de la aplicación: Se realiza una solicitud HTTP para comprobar que la aplicación Flask está funcionando correctamente.</li>
+<li>Eliminación del contenedor Docker: Finalmente, se elimina el contenedor Docker para limpiar el entorno de ejecución. Este pipeline asegura que, cada vez que se sube un cambio en la rama main, la aplicación se construya, ejecute y pruebe automáticamente en un entorno Docker.</li>
+</ol>
 <p><a href="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml"><img src="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml/badge.svg" alt="CI/CD Pipeline" style="pointer-events: none;" class="inline"/></a></p>
 <p><a href="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml"><img src="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml/badge.svg" alt="Pylint" style="pointer-events: none;" class="inline"/></a> </p>
 </div></div><!-- contents -->

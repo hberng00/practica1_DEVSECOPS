@@ -3,7 +3,7 @@ Este módulo define una aplicación Flask que proporciona una API simple para de
 CI/CD con Docker. Contiene rutas para saludar, agregar números y manejar errores.
 """
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 
 # Crear la aplicación Flask
 app = Flask(__name__)

@@ -44,8 +44,8 @@ def add():
     data = request.get_json()
     
     if not data or \
-   'a' not in data or \
-   'b' not in data:
+       'a' not in data or \
+       'b' not in data:
         return jsonify({"error": "Debes proporcionar los numeros 'a' y 'b'"}), 400
     
     a = data['a']
@@ -58,6 +58,7 @@ def add():
         return jsonify({"error": "Los valores 'a' y 'b' deben ser numeros"}), 400
     
     return jsonify({"result": result})
+
 
 @app.errorhandler(404)
 def page_not_found():

@@ -1,3 +1,8 @@
+"""
+Este módulo define una aplicación Flask que proporciona una API simple para demostrar 
+CI/CD con Docker. Contiene rutas para saludar, agregar números y manejar errores.
+"""
+
 from flask import Flask, jsonify, request
 
 # Crear la aplicación Flask
@@ -38,7 +43,6 @@ def add():
     """
     data = request.get_json()
     
-    # Verificar si los datos son válidos y si contienen 'a' y 'b'
     if not data or 'a' not in data or 'b' not in data:
         return jsonify({"error": "Debes proporcionar los numeros 'a' y 'b'"}), 400
     

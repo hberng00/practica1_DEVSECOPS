@@ -107,6 +107,12 @@ $(function(){ initResizable(false); });
 <li>rueba de la aplicación: Se realiza una solicitud HTTP para comprobar que la aplicación Flask está funcionando correctamente.</li>
 <li>Eliminación del contenedor Docker: Finalmente, se elimina el contenedor Docker para limpiar el entorno de ejecución. Este pipeline asegura que, cada vez que se sube un cambio en la rama main, la aplicación se construya, ejecute y pruebe automáticamente en un entorno Docker.</li>
 </ol>
+<p>Doxygen Deployment Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:</p>
+<ol type="1">
+<li>Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.</li>
+<li>Generación de documentación con Doxygen: Utiliza la acción mattnotmitt/doxygen-action para generar la documentación de Doxygen a partir de un archivo de configuración Doxyfile ubicado en .github/Doxyfile.</li>
+<li>Despliegue en GitHub Pages: Despliega la documentación generada en la rama gh-pages utilizando la acción peaceiris/actions-gh-pages. La documentación se publica desde el directorio docs/html. Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main</li>
+</ol>
 <p><a href="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml"><img src="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml/badge.svg" alt="CI/CD Pipeline" style="pointer-events: none;" class="inline"/></a></p>
 <p><a href="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml"><img src="https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml/badge.svg" alt="Pylint" style="pointer-events: none;" class="inline"/></a> </p>
 </div></div><!-- contents -->

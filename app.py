@@ -75,4 +75,7 @@ def internal_server_error():
 
 # Ejecutar la aplicación Flask en el puerto 5000 cuando se ejecuta el script
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(
+        host="0.0.0.0", 
+        port=5000
+    )

@@ -43,7 +43,9 @@ def add():
     """
     data = request.get_json()
     
-    if not data or 'a' not in data or 'b' not in data:
+    if not data or \
+   'a' not in data or \
+   'b' not in data:
         return jsonify({"error": "Debes proporcionar los numeros 'a' y 'b'"}), 400
     
     a = data['a']

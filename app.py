@@ -32,34 +32,6 @@ def greet(name):
     """
     return f"Hello, {name}! Bienvenido a nuestra aplicacion."
 
-@app.route("/add", methods=["POST"])
-def add():
-    """
-    Ruta que suma dos números enviados en una solicitud POST.
-    Se espera que los datos se envíen en formato JSON con las claves 'a' y 'b'.
-    Ejemplo de entrada JSON: {"a": 10, "b": 20}
-    
-    Devuelve un resultado en formato JSON con la clave 'result' que contiene la suma de los dos números.
-    """
-    data = request.get_json()
-    
-    if not data or \
-       'a' not in data or \
-       'b' not in data:
-        return jsonify({"error": "Debes proporcionar los numeros 'a' y 'b'"}), 400
-    
-    a = data['a']
-    b = data['b']
-    
-    # Validar que 'a' y 'b' sean números
-    try:
-        result = float(a) + float(b)
-    except ValueError:
-        return jsonify({"error": "Los valores 'a' y 'b' deben ser numeros"}), 400
-    
-    return jsonify({"result": result})
-
-
 @app.errorhandler(404)
 def page_not_found():
     """

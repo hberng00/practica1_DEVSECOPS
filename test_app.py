@@ -39,7 +39,6 @@ def test_greet(test_client):
     response = test_client.get(f'/greet/{name}')
     assert f'Hello, {name}!'.encode() in response.data
 
-
 def test_404_error(test_client):
     """
     Test para la ruta desconocida que lanza un error 404.

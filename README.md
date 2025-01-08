@@ -12,7 +12,7 @@ Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuan
 Este pipeline garantiza que la aplicación se construya, ejecute y pruebe automáticamente cada vez que se realice un cambio en la rama main.
 
 Pylint Workflow
-Este flujo de trabajo de GitHub Actions está diseñado para analizar el código Python utilizando Pylint cada vez que se realiza un "push" en la rama main. El propósito de este workflow es asegurar que el código siga las mejores prácticas y estándares de estilo definidos por PEP 8. A continuación se describen los pasos que realiza el flujo de trabajo:
+Este flujo de trabajo de GitHub Actions está diseñado para analizar el código Python utilizando Pylint cada vez que se realiza un "push" en la rama main. El propósito de este flujo es asegurar que el código siga las mejores prácticas y estándares de estilo definidos por PEP 8. A continuación se describen los pasos que realiza el flujo de trabajo:
 
 1. Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.
 2. Configuración de Python: Establece el entorno Python 3.9 utilizando la acción actions/setup-python.
@@ -28,6 +28,15 @@ Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar
 2. Generación de documentación con Doxygen: Utiliza la acción mattnotmitt/doxygen-action para generar la documentación de Doxygen a partir de un archivo de configuración Doxyfile ubicado en .github/Doxyfile.
 3. Despliegue en GitHub Pages: Despliega la documentación generada en la rama gh-pages utilizando la acción peaceiris/actions-gh-pages. La documentación se publica desde el directorio docs/html.
 Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main
+
+Test Workflow
+Este flujo de trabajo de GitHub Actions está configurado para ejecutar pruebas automatizadas utilizando pytest cada vez que se realiza un "push" o se abre un "pull request" en la rama main, para asegurarse de que no hay errores al actualizar los métodos. A continuación, se describen los pasos del flujo de trabajo:
+
+1. Checkout del repositorio: Obtiene el código fuente más reciente del repositorio utilizando la acción actions/checkout.
+2. Configuración de Python: Configura el entorno Python 3.9 utilizando la acción actions/setup-python.
+3. Instalación de dependencias: Crea y activa un entorno virtual (venv), actualiza pip y luego instala las dependencias necesarias como Flask y pytest.
+4. Ejecución de pruebas con pytest: Ejecuta pytest dentro del entorno virtual para correr todas las pruebas definidas en el proyecto.
+Este flujo de trabajo garantiza que todas las pruebas se ejecuten automáticamente con cada cambio en la rama main, ayudando a detectar errores y asegurar la calidad del código antes de integrarlo.
 
 
 [![CI/CD Pipeline](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml)

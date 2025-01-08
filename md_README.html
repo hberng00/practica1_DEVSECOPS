@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Practica 1 Devsecops: practica1DEVSECOPS</title>
+<title>Practica 1 Devsecops: Practica1DEVSECOPS</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,11 +84,12 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div><div class="header">
-  <div class="headertitle"><div class="title">practica1DEVSECOPS</div></div>
+  <div class="headertitle"><div class="title">Practica1DEVSECOPS</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
-<p>CI/CD Pipeline</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+CI/CD Pipeline</h1>
 <p>Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuando se realiza un "push" en la rama main del repositorio. El pipeline realiza los siguientes pasos:</p><ol type="1">
 <li>Checkout del código: Obtiene el código más reciente del repositorio.</li>
 <li>Configuración de Docker: Configura Docker en el entorno de ejecución.</li>
@@ -98,7 +99,8 @@ $(function(){ initResizable(false); });
 <li>Prueba de la aplicación: Realiza una solicitud HTTP para verificar que la aplicación Flask esté funcionando correctamente.</li>
 <li>Limpieza: Finalmente, se elimina el contenedor Docker para limpiar el entorno. Este pipeline garantiza que la aplicación se construya, ejecute y pruebe automáticamente cada vez que se realice un cambio en la rama main.</li>
 </ol>
-<p>Pylint Workflow</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Pylint Workflow</h1>
 <p>Este flujo de trabajo de GitHub Actions está diseñado para analizar el código Python utilizando Pylint cada vez que se realiza un "push" en la rama main. El propósito de este flujo es asegurar que el código siga las mejores prácticas y estándares de estilo definidos por PEP 8. A continuación se describen los pasos que realiza el flujo de trabajo:</p>
 <ol type="1">
 <li>Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.</li>
@@ -107,14 +109,16 @@ $(function(){ initResizable(false); });
 <li>Formato de código con autopep8: Ejecuta autopep8 para corregir automáticamente el estilo del código según las reglas de PEP 8, aplicando dos niveles de corrección agresiva a app.py y test_app.py.</li>
 <li>Análisis estático con Pylint: Ejecuta pylint sobre app.py y test_app.py para detectar errores, advertencias y sugerencias de mejora en el código. Este flujo de trabajo ayuda a mantener la calidad del código, asegurando que siga los estándares de estilo y detectando posibles problemas antes de ser fusionados en la rama main.</li>
 </ol>
-<p>Doxygen Deployment</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Doxygen Deployment</h1>
 <p>Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:</p>
 <ol type="1">
 <li>Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.</li>
 <li>Generación de documentación con Doxygen: Utiliza la acción mattnotmitt/doxygen-action para generar la documentación de Doxygen a partir de un archivo de configuración Doxyfile ubicado en .github/Doxyfile.</li>
 <li>Despliegue en GitHub Pages: Despliega la documentación generada en la rama gh-pages utilizando la acción peaceiris/actions-gh-pages. La documentación se publica desde el directorio docs/html. Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main</li>
 </ol>
-<p>Test Workflow</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Test Workflow</h1>
 <p>Este flujo de trabajo de GitHub Actions está configurado para ejecutar pruebas automatizadas utilizando pytest cada vez que se realiza un "push" o se abre un "pull request" en la rama main, para asegurarse de que no hay errores al actualizar los métodos. A continuación, se describen los pasos del flujo de trabajo:</p>
 <ol type="1">
 <li>Checkout del repositorio: Obtiene el código fuente más reciente del repositorio utilizando la acción actions/checkout.</li>

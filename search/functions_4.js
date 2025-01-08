@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['page_5fnot_5ffound_0',['page_not_found',['../namespaceapp.html#a527b8a3b88362eed927e427c856260e2',1,'app']]]
+  ['internal_5fserver_5ferror_0',['internal_server_error',['../namespaceapp.html#adf0cbd2a0de4e8a30c54b53e6a2cb313',1,'app']]]
 ];

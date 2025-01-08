@@ -1,6 +1,7 @@
 # practica1DEVSECOPS
 
 CI/CD Pipeline
+
 Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuando se realiza un "push" en la rama main del repositorio. El pipeline realiza los siguientes pasos:
 1. Checkout del código: Obtiene el código más reciente del repositorio.
 2. Configuración de Docker: Configura Docker en el entorno de ejecución.
@@ -12,6 +13,7 @@ Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuan
 Este pipeline garantiza que la aplicación se construya, ejecute y pruebe automáticamente cada vez que se realice un cambio en la rama main.
 
 Pylint Workflow
+
 Este flujo de trabajo de GitHub Actions está diseñado para analizar el código Python utilizando Pylint cada vez que se realiza un "push" en la rama main. El propósito de este flujo es asegurar que el código siga las mejores prácticas y estándares de estilo definidos por PEP 8. A continuación se describen los pasos que realiza el flujo de trabajo:
 
 1. Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.
@@ -22,6 +24,7 @@ Este flujo de trabajo de GitHub Actions está diseñado para analizar el código
 Este flujo de trabajo ayuda a mantener la calidad del código, asegurando que siga los estándares de estilo y detectando posibles problemas antes de ser fusionados en la rama main.
 
 Doxygen Deployment
+
 Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:
 
 1. Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.
@@ -30,6 +33,7 @@ Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar
 Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main
 
 Test Workflow
+
 Este flujo de trabajo de GitHub Actions está configurado para ejecutar pruebas automatizadas utilizando pytest cada vez que se realiza un "push" o se abre un "pull request" en la rama main, para asegurarse de que no hay errores al actualizar los métodos. A continuación, se describen los pasos del flujo de trabajo:
 
 1. Checkout del repositorio: Obtiene el código fuente más reciente del repositorio utilizando la acción actions/checkout.

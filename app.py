@@ -33,24 +33,23 @@ def greet(name):
     return f"Hello, {name}! Bienvenido a nuestra aplicacion."
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     """
     Maneja el error 404 cuando la página solicitada no existe.
     Devuelve un mensaje de error en formato JSON.
     """
-    return jsonify({"error": "La pagina no fue encontrada"}), 404
+    e=404
+    return jsonify({"error": "La pagina no fue encontrada"}), e
 
 @app.errorhandler(500)
-def internal_server_error():
+def internal_server_error(e):
     """
     Maneja el error 500 cuando ocurre un error interno en el servidor.
     Devuelve un mensaje de error en formato JSON.
     """
-    return jsonify({"error": "Error interno del servidor"}), 500
+    e=500
+    return jsonify({"error": "Error interno del servidor"}), e
 
 # Ejecutar la aplicación Flask en el puerto 5000 cuando se ejecuta el script
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0", 
-        port=5000
-    )
+    app.run( host="0.0.0.0", port=5000)

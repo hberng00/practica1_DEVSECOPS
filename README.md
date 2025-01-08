@@ -11,6 +11,15 @@ Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuan
 7. Limpieza: Finalmente, se elimina el contenedor Docker para limpiar el entorno.
 Este pipeline garantiza que la aplicación se construya, ejecute y pruebe automáticamente cada vez que se realice un cambio en la rama main.
 
+Pylint Workflow
+Este flujo de trabajo de GitHub Actions está diseñado para analizar el código Python utilizando Pylint cada vez que se realiza un "push" en la rama main. El propósito de este workflow es asegurar que el código siga las mejores prácticas y estándares de estilo definidos por PEP 8. A continuación se describen los pasos que realiza el flujo de trabajo:
+
+1. Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.
+2. Configuración de Python: Establece el entorno Python 3.9 utilizando la acción actions/setup-python.
+3. Instalación de dependencias: Instala las dependencias necesarias como pylint, pytest, flask y autopep8.
+4. Formato de código con autopep8: Ejecuta autopep8 para corregir automáticamente el estilo del código según las reglas de PEP 8, aplicando dos niveles de corrección agresiva a app.py y test_app.py.
+5. Análisis estático con Pylint: Ejecuta pylint sobre app.py y test_app.py para detectar errores, advertencias y sugerencias de mejora en el código.
+Este flujo de trabajo ayuda a mantener la calidad del código, asegurando que siga los estándares de estilo y detectando posibles problemas antes de ser fusionados en la rama main.
 
 Doxygen Deployment
 Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:

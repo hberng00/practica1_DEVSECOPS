@@ -6,7 +6,7 @@ import pytest
 from app import app
 
 @pytest.fixture(name="test_client")
-def test_client():
+def first_test_client():
     """
     Fixture que proporciona un cliente de prueba para la aplicación Flask.
     Este cliente simula peticiones HTTP para realizar las pruebas.

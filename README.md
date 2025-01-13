@@ -2,6 +2,8 @@
 
 # CI/CD Pipeline
 
+[![CI/CD Pipeline](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml)
+
 Este flujo de trabajo de CI/CD en GitHub Actions se activa automáticamente cuando se realiza un "push" en la rama main del repositorio. El pipeline realiza los siguientes pasos:
 1. Checkout del código: Obtiene el código más reciente del repositorio.
 2. Configuración de Docker: Configura Docker en el entorno de ejecución.
@@ -14,6 +16,9 @@ Este pipeline garantiza que la aplicación se construya, ejecute y pruebe autom�
 
 # Pylint Workflow
 
+[![Pylint](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml)
+
+
 Este flujo de trabajo de GitHub Actions está diseñado para analizar el código Python utilizando Pylint cada vez que se realiza un "push" en la rama main. El propósito de este flujo es asegurar que el código siga las mejores prácticas y estándares de estilo definidos por PEP 8. A continuación se describen los pasos que realiza el flujo de trabajo:
 
 1. Checkout del código: Obtiene el código más reciente del repositorio utilizando la acción actions/checkout.
@@ -23,7 +28,19 @@ Este flujo de trabajo de GitHub Actions está diseñado para analizar el código
 5. Análisis estático con Pylint: Ejecuta pylint sobre app.py y test_app.py para detectar errores, advertencias y sugerencias de mejora en el código.
 Este flujo de trabajo ayuda a mantener la calidad del código, asegurando que siga los estándares de estilo y detectando posibles problemas antes de ser fusionados en la rama main.
 
-# Doxygen Deployment
+# Act
+
+La herramienta act permite ejecutar y probar flujos de trabajo de GitHub Actions localmente, 
+sin necesidad de desplegarlos en un entorno de producción. 
+Esto ahorra tiempo y recursos, ya que permite simular diferentes acciones 
+y validar sus cambios rápidamente en su propio dispositivo.
+Al evitar la ejecución completa en la nube, act facilita la iteración rápida, 
+optimiza el proceso de desarrollo y reduce significativamente el consumo de recursos, 
+haciendo que el trabajo sea más ágil y efectivo.
+
+
+# Doxygen Deployment 
+[![Doxygen Deployment](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/doxygen-deployment.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/doxygen-deployment.yml)
 
 Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:
 
@@ -32,7 +49,8 @@ Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar
 3. Despliegue en GitHub Pages: Despliega la documentación generada en la rama gh-pages utilizando la acción peaceiris/actions-gh-pages. La documentación se publica desde el directorio docs/html.
 Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main
 
-# Test Workflow
+# Test Workflow 
+[![test](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/test.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/test.yml)
 
 Este flujo de trabajo de GitHub Actions está configurado para ejecutar pruebas automatizadas utilizando pytest cada vez que se realiza un "push" o se abre un "pull request" en la rama main, para asegurarse de que no hay errores al actualizar los métodos. A continuación, se describen los pasos del flujo de trabajo:
 
@@ -42,7 +60,3 @@ Este flujo de trabajo de GitHub Actions está configurado para ejecutar pruebas 
 4. Ejecución de pruebas con pytest: Ejecuta pytest dentro del entorno virtual para correr todas las pruebas definidas en el proyecto.
 Este flujo de trabajo garantiza que todas las pruebas se ejecuten automáticamente con cada cambio en la rama main, ayudando a detectar errores y asegurar la calidad del código antes de integrarlo.
 
-
-[![CI/CD Pipeline](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/cid-cd.yml)
-
-[![Pylint](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/pylint.yml)

@@ -40,6 +40,7 @@ haciendo que el trabajo sea más ágil y efectivo.
 
 
 # Doxygen Deployment 
+
 [![Doxygen Deployment](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/doxygen-deployment.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/doxygen-deployment.yml)
 
 Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar la documentación de código utilizando Doxygen en GitHub Pages. El pipeline se activa automáticamente cuando se realiza un "push" en la rama main, o puede ser disparado manualmente mediante workflow_dispatch. Los pasos que realiza este flujo de trabajo son los siguientes:
@@ -50,6 +51,7 @@ Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar
 Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main
 
 # Test Workflow 
+
 [![test](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/test.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/test.yml)
 
 Este flujo de trabajo de GitHub Actions está configurado para ejecutar pruebas automatizadas utilizando pytest cada vez que se realiza un "push" o se abre un "pull request" en la rama main, para asegurarse de que no hay errores al actualizar los métodos. A continuación, se describen los pasos del flujo de trabajo:

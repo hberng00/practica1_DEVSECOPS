@@ -50,6 +50,20 @@ Este flujo de trabajo de GitHub Actions está diseñado para generar y desplegar
 3. Despliegue en GitHub Pages: Despliega la documentación generada en la rama gh-pages utilizando la acción peaceiris/actions-gh-pages. La documentación se publica desde el directorio docs/html.
 Este flujo de trabajo asegura que la documentación del proyecto se genere y se publique automáticamente en GitHub Pages cada vez que se realiza un cambio en la rama main
 
+# Runners 
+
+Los runners locales de GitHub nos permiten ejecutar workflows de GitHub Actions en máquinas propias en lugar de usar los runners alojados por GitHub. Esto permite a los equipos tener mayor control sobre el entorno de ejecución, como hardware específico, configuraciones personalizadas o dependencias únicas.
+
+Costos Reducidos: Evitan costos adicionales por exceder los límites de uso de GitHub-hosted runners.
+Personalización: Permiten configuraciones específicas y personalizadas para proyectos particulares.
+Seguridad: Ofrecen mayor control sobre datos y secretos sensibles, ejecutándolos en un entorno seguro y privado.
+Desempeño Mejorado: Pueden proporcionar tiempos de ejecución más rápidos si se utilizan máquinas potentes o dedicadas.
+
+
+# Docker image 
+
+Este flujo de trabajo automatiza y facilita la creación y almacenamiento de una imagen de Docker cada vez que se actualiza el código. Esto garantiza que los usuarios o compañeros de equipo siempre puedan acceder a la versión más reciente de la imagen sin complicaciones. Al eliminar la necesidad de actualizaciones manuales, se asegura que todos trabajen con la versión más actualizada, mejorando la consistencia y reduciendo posibles errores. Además, esta automatización optimiza el proceso de desarrollo, permitiendo una integración continua más fluida y eficiente, lo que ahorra tiempo y esfuerzo en la gestión de versiones de la imagen.
+
 # Test Workflow 
 
 [![test](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/test.yml/badge.svg)](https://github.com/hberng00/practica1_DEVSECOPS/actions/workflows/test.yml)
